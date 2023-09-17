@@ -22,7 +22,7 @@ namespace With_SOLID
                     precoDepoisDoDesconto = (precoProduto - (0.1m * precoProduto)) - descontoPorFidelidade * (precoProduto - (0.1m * precoProduto));
                     break;
                 case StatusContaCliente.ClienteEspecial:
-                    precoDepoisDoDesconto = (0.7m * precoProduto) - descontoPorFidelidade * (0.7m * precoProduto);
+                    precoDepoisDoDesconto = (precoProduto - (0.7m * precoProduto)) - descontoPorFidelidade * (0.7m * precoProduto);
                     break;
                 case StatusContaCliente.ClienteVIP:
                     precoDepoisDoDesconto = (precoProduto - (0.5m * precoProduto)) - descontoPorFidelidade * (precoProduto - (0.5m * precoProduto));
