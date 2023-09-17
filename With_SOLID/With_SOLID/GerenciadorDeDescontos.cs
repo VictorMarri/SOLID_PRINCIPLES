@@ -11,7 +11,7 @@ namespace With_SOLID
         public decimal AplicarDesconto(decimal precoProduto, StatusContaCliente statusTipoContaCliente, int anosDeContaCliente)
         {
             decimal precoDepoisDoDesconto = 0;
-            decimal descontoPorFidelidade = (anosDeContaCliente > 5) ? (decimal)5 / 100 : (decimal)anosDeContaCliente / 100;
+            decimal descontoPorFidelidade = (anosDeContaCliente > Constantes.DESCONTO_MAXIMO_POR_FIDELIDADE) ? (decimal)5 / 100 : (decimal)anosDeContaCliente / 100;
 
             switch (statusTipoContaCliente)
             {
@@ -19,15 +19,15 @@ namespace With_SOLID
                     precoDepoisDoDesconto = precoProduto;
                     break;
                 case StatusContaCliente.ClienteComum:
-                    precoDepoisDoDesconto = precoProduto - (0.1m * precoProduto);
+                    precoDepoisDoDesconto = precoProduto - (Constantes.DESCONTO_CLIENTE_COMUM * precoProduto);
                     precoDepoisDoDesconto = precoDepoisDoDesconto - (descontoPorFidelidade  * precoDepoisDoDesconto);
                     break;
                 case StatusContaCliente.ClienteEspecial:
-                    precoDepoisDoDesconto = (precoProduto - (0.3m * precoProduto));
+                    precoDepoisDoDesconto = (precoProduto - (Constantes.DESCONTO_CLIENTE_ESPECIAL * precoProduto));
                     precoDepoisDoDesconto  = precoDepoisDoDesconto - (descontoPorFidelidade * precoDepoisDoDesconto);
                     break;
                 case StatusContaCliente.ClienteVIP:
-                    precoDepoisDoDesconto = (precoProduto - (0.5m * precoProduto));
+                    precoDepoisDoDesconto = (precoProduto - (Constantes.DESCONTO_CLIENTE_VIP * precoProduto));
                     precoDepoisDoDesconto = precoDepoisDoDesconto - (descontoPorFidelidade * precoDepoisDoDesconto);
                     break;
                 default:
