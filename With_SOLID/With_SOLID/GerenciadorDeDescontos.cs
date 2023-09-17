@@ -19,13 +19,16 @@ namespace With_SOLID
                     precoDepoisDoDesconto = precoProduto;
                     break;
                 case StatusContaCliente.ClienteComum:
-                    precoDepoisDoDesconto = (precoProduto - (0.1m * precoProduto)) - descontoPorFidelidade * (precoProduto - (0.1m * precoProduto));
+                    precoDepoisDoDesconto = precoProduto - (0.1m * precoProduto);
+                    precoDepoisDoDesconto = precoDepoisDoDesconto - (descontoPorFidelidade  * precoDepoisDoDesconto);
                     break;
                 case StatusContaCliente.ClienteEspecial:
-                    precoDepoisDoDesconto = (precoProduto - (0.7m * precoProduto)) - descontoPorFidelidade * (0.7m * precoProduto);
+                    precoDepoisDoDesconto = (precoProduto - (0.3m * precoProduto));
+                    precoDepoisDoDesconto  = precoDepoisDoDesconto - (descontoPorFidelidade * precoDepoisDoDesconto);
                     break;
                 case StatusContaCliente.ClienteVIP:
-                    precoDepoisDoDesconto = (precoProduto - (0.5m * precoProduto)) - descontoPorFidelidade * (precoProduto - (0.5m * precoProduto));
+                    precoDepoisDoDesconto = (precoProduto - (0.5m * precoProduto));
+                    precoDepoisDoDesconto = precoDepoisDoDesconto - (descontoPorFidelidade * precoDepoisDoDesconto);
                     break;
                 default:
                     throw new NotImplementedException();
