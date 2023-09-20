@@ -8,27 +8,32 @@ namespace With_SOLID
 {
     public class GerenciadorDeDescontos
     {
+        private readonly ICalculaDescontoFidelidade _descontoFidelidade;
+        public GerenciadorDeDescontos(ICalculaDescontoFidelidade descontoFidelidade)
+        {
+            _descontoFidelidade = descontoFidelidade;
+        }
+
         public decimal AplicarDesconto(decimal precoProduto, StatusContaCliente statusTipoContaCliente, int anosDeContaCliente)
         {
             decimal precoDepoisDoDesconto = 0;
-            decimal descontoPorFidelidade = (anosDeContaCliente > Constantes.DESCONTO_MAXIMO_POR_FIDELIDADE) ? (decimal)5 / 100 : (decimal)anosDeContaCliente / 100;
 
             switch (statusTipoContaCliente)
             {
                 case StatusContaCliente.NaoRegistrado:
-                    precoDepoisDoDesconto = precoProduto;
+                    precoDepoisDoDesconto = new AplicaDescontoTipoClienteNaoRegistrado().AplicaDesconto(precoProduto);
                     break;
                 case StatusContaCliente.ClienteComum:
-                    precoDepoisDoDesconto = precoProduto - (Constantes.DESCONTO_CLIENTE_COMUM * precoProduto);
-                    precoDepoisDoDesconto = precoDepoisDoDesconto - (descontoPorFidelidade  * precoDepoisDoDesconto);
+                    precoDepoisDoDesconto = new AplicaDescontoTipoClienteComum().AplicaDesconto(precoProduto);
+                    precoDepoisDoDesconto = _descontoFidelidade.AplicarDescontoFidelidade(precoDepoisDoDesconto, anosDeContaCliente);
                     break;
                 case StatusContaCliente.ClienteEspecial:
-                    precoDepoisDoDesconto = (precoProduto - (Constantes.DESCONTO_CLIENTE_ESPECIAL * precoProduto));
-                    precoDepoisDoDesconto  = precoDepoisDoDesconto - (descontoPorFidelidade * precoDepoisDoDesconto);
+                    precoDepoisDoDesconto = new AplicaDescontoTipoClienteEspecial().AplicaDesconto(precoProduto);
+                    precoDepoisDoDesconto = _descontoFidelidade.AplicarDescontoFidelidade(precoDepoisDoDesconto, anosDeContaCliente);
                     break;
                 case StatusContaCliente.ClienteVIP:
-                    precoDepoisDoDesconto = (precoProduto - (Constantes.DESCONTO_CLIENTE_VIP * precoProduto));
-                    precoDepoisDoDesconto = precoDepoisDoDesconto - (descontoPorFidelidade * precoDepoisDoDesconto);
+                    precoDepoisDoDesconto = new AplicaDescontoTipoClienteVIP().AplicaDesconto(precoProduto);
+                    precoDepoisDoDesconto = _descontoFidelidade.AplicarDescontoFidelidade(precoDepoisDoDesconto, anosDeContaCliente);
                     break;
                 default:
                     throw new NotImplementedException();
