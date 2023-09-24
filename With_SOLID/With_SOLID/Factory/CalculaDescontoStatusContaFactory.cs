@@ -3,8 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using With_SOLID.Descontos.DescontoTipoCliente.ClienteComum;
+using With_SOLID.Descontos.DescontoTipoCliente.ClienteEspecial;
+using With_SOLID.Descontos.DescontoTipoCliente.ClienteNaoRegistrado;
+using With_SOLID.Descontos.DescontoTipoCliente.ClienteVIP;
+using With_SOLID.Enums;
+using With_SOLID.Interfaces;
 
-namespace With_SOLID
+namespace With_SOLID.Factory
 {
     /// <summary>
     /// Classe Responsavel apenas pela criação das instancias corretas para cada tipo de cliente, e consequentemente o desconto

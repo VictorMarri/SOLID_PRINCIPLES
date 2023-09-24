@@ -3,14 +3,16 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using With_SOLID.Interfaces;
+using With_SOLID.Utils;
 
-namespace With_SOLID
+namespace With_SOLID.Descontos.DescontoTipoCliente.ClienteComum
 {
     public class AplicaDescontoTipoClienteComum : IAplicaDescontoStatusConta
     {
         public decimal AplicaDesconto(decimal preco)
         {
-            return preco - (Constantes.DESCONTO_CLIENTE_COMUM * preco);
+            return preco - Constantes.DESCONTO_CLIENTE_COMUM * preco;
         }
     }
 }

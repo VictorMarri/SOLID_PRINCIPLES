@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace With_SOLID
+namespace With_SOLID.Utils
 {
     public class Constantes
     {
