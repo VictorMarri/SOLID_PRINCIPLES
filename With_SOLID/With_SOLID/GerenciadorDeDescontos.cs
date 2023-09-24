@@ -8,38 +8,24 @@ namespace With_SOLID
 {
     public class GerenciadorDeDescontos
     {
+        private readonly ICalculaDescontoStatusContaFactory _factoryStatusConta;
         private readonly ICalculaDescontoFidelidade _descontoFidelidade;
-        public GerenciadorDeDescontos(ICalculaDescontoFidelidade descontoFidelidade)
+
+        public GerenciadorDeDescontos(ICalculaDescontoFidelidade descontoFidelidade, ICalculaDescontoStatusContaFactory factory)
         {
             _descontoFidelidade = descontoFidelidade;
+            _factoryStatusConta = factory;
         }
 
         public decimal AplicarDesconto(decimal precoProduto, StatusContaCliente statusTipoContaCliente, int anosDeContaCliente)
         {
-            decimal precoDepoisDoDesconto = 0;
+            decimal precoFinal= 0, precoDescontoPorStatusConta = 0; 
 
-            switch (statusTipoContaCliente)
-            {
-                case StatusContaCliente.NaoRegistrado:
-                    precoDepoisDoDesconto = new AplicaDescontoTipoClienteNaoRegistrado().AplicaDesconto(precoProduto);
-                    break;
-                case StatusContaCliente.ClienteComum:
-                    precoDepoisDoDesconto = new AplicaDescontoTipoClienteComum().AplicaDesconto(precoProduto);
-                    precoDepoisDoDesconto = _descontoFidelidade.AplicarDescontoFidelidade(precoDepoisDoDesconto, anosDeContaCliente);
-                    break;
-                case StatusContaCliente.ClienteEspecial:
-                    precoDepoisDoDesconto = new AplicaDescontoTipoClienteEspecial().AplicaDesconto(precoProduto);
-                    precoDepoisDoDesconto = _descontoFidelidade.AplicarDescontoFidelidade(precoDepoisDoDesconto, anosDeContaCliente);
-                    break;
-                case StatusContaCliente.ClienteVIP:
-                    precoDepoisDoDesconto = new AplicaDescontoTipoClienteVIP().AplicaDesconto(precoProduto);
-                    precoDepoisDoDesconto = _descontoFidelidade.AplicarDescontoFidelidade(precoDepoisDoDesconto, anosDeContaCliente);
-                    break;
-                default:
-                    throw new NotImplementedException();
-            }
+            precoDescontoPorStatusConta = _factoryStatusConta.GetCalculDescontoStatusConta(statusTipoContaCliente).AplicaDesconto(precoProduto);
 
-            return precoDepoisDoDesconto;
+            precoFinal = _descontoFidelidade.AplicarDescontoFidelidade(precoDescontoPorStatusConta, anosDeContaCliente);
+
+            return precoFinal;
         }
     }
 }
