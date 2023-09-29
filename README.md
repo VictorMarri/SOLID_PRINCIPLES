@@ -1,6 +1,7 @@
 
 # S.O.L.I.D
 
+_As explicações e anotações detalhadas de cada um dos principios, com as fontes das informações está dentro do seu próprio arquivo Markdown nesse repositorio!_
 
 SOLID é um acrônimo que representa um conjunto de cinco princípios de design de software que foram introduzidos por Robert C. Martin e se tornaram uma base fundamental para a criação de código limpo, manutenível e escalável. Esses princípios visam melhorar a qualidade do software, tornando-o mais flexível, fácil de entender e de adaptar a mudanças.
 
@@ -16,4 +17,4 @@ SOLID é um acrônimo que representa um conjunto de cinco princípios de design 
 
 Esses princípios SOLID são diretrizes essenciais para escrever código limpo, flexível e de fácil manutenção.
 
-## As explicações e anotações detalhadas de cada um dos principios está dentro do seu próprio arquivo Markdown nesse repositorio!
+
