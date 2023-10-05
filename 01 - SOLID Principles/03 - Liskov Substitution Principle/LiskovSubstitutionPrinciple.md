@@ -1,6 +1,6 @@
 # L - Liskov Substitution Principle
 
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/9bde132d-e6be-43db-beeb-7179b71595b5/Untitled.png)
+![L](https://github.com/VictorMarri/SOLID_PRINCIPLES/assets/55095546/a005fd98-c2f0-4912-989b-4545b412adfb)
 
 > **"Os objetos de uma superclasse devem poder ser substituídos por objetos de suas subclasses sem quebrarmos a aplicação."**
 
