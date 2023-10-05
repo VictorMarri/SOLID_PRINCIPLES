@@ -42,7 +42,7 @@ Se pegarmos esse codigo aqui, podemos ver algumas dependências.
 
 Essas dependencias são:
 
-[imagem1]
+![Imagem1](https://github.com/VictorMarri/SOLID_PRINCIPLES/assets/55095546/4d404853-583b-4173-b9fe-23fba387f878)
 
 LeilaoController depende de:
 
@@ -67,46 +67,46 @@ Acoplamento diz respeito à dependência entre dois tipos. Num sistema orientado
 
 - Acoplamentos para tipos estáveis (Tipos que muito dificilmente serão alterados)
 
-[Imagem2]
+![Imagem2](https://github.com/VictorMarri/SOLID_PRINCIPLES/assets/55095546/6b194f38-6ab1-4afd-8ec6-d1e4fe12fab8)
 
 ## Acoplamentos  ruins:
 
 Acoplamentos voltados à tipos instáveis, ou seja, aqueles  tipos que tem alta probabilidade de serem alterados, sejam por adição de novas funcionalidades, seja por outras classes que as substituam
 
-[Imagem3]
+![Imagem3](https://github.com/VictorMarri/SOLID_PRINCIPLES/assets/55095546/48367f88-460e-4167-90c5-81490cb8c1d7)
 
 # Explicando o acoplamento ruim:
 
 Esses acoplamentos são ruins pq, alem de serem altamente voláteis, eles tambem tem suas dependencias. Dessa forma, podemos inferir que, somente a dependencia de LeilaoController para LeilaoDao já carrega outras dependencias como:
 
-[Imagem4]
+![Imagem4](https://github.com/VictorMarri/SOLID_PRINCIPLES/assets/55095546/27a19d1b-467f-419d-92e7-d7b0771967d4)
 
 Aqui, por exemplo, LeilaoController depende do DbContext, e se mudar algo no AppDbContext, impacta diretamente no Controller, o que não deveria acontecer. ****************************************************************************************Eu preciso achar uma maneira de remover essa dependencia.****************************************************************************************
 
 Portanto, vamos criar abstrações, onde nosso codigo vai depender delas, e nao de classes concretas. Vamos remover por completo das dependencias. 
 
-[Imagem5]
+![Imagem5](https://github.com/VictorMarri/SOLID_PRINCIPLES/assets/55095546/2bfb0001-1013-45a5-97d8-a7eeab08e980)
 
 # Passo-a-passo
 
 Basicamente eu crio uma interface com as abstrações de lógica complexa da classe concreta q eu vou implementar ela:
 
-[Imagem6]
+![Imagem6](https://github.com/VictorMarri/SOLID_PRINCIPLES/assets/55095546/b2d2e4c1-8ef3-48a1-87e6-f3dc8fef2c4e)
 
 Implemento essa interface na classe concreta:
 
-[Imagme7]
+![Imagem7](https://github.com/VictorMarri/SOLID_PRINCIPLES/assets/55095546/99837cbf-9f71-4a73-b93f-12d609a6e36a)
 
 Crio a injeção de dependencia no startup:
 
 Aqui, o .Net automaticamente vai fazer a injeção de toda instancia da interface para a classe concreta automaticamente.
 
-[Iamgem8]
+![Imagem8](https://github.com/VictorMarri/SOLID_PRINCIPLES/assets/55095546/86f615db-f406-4d49-a775-b79867e7a6cd)
 
 Injeto na classe que precisa da dependencia para termos acesso aos recursos:
 
-[Imagem9]
+![Imagem9](https://github.com/VictorMarri/SOLID_PRINCIPLES/assets/55095546/8db7966a-0332-4016-952a-c26d66684f12)
 
 Injeção de Dependencia / Inversão de Dependencia / Inversão de controle
 
-Imagem10
+![Imagem10](https://github.com/VictorMarri/SOLID_PRINCIPLES/assets/55095546/c700d49c-205c-4f9c-a0d7-2ff547a248b5)
