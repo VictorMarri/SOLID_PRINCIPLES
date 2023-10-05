@@ -1,6 +1,6 @@
 # Open Closed Principle
 
-[x] Imagem OCP aqui
+![o](https://github.com/VictorMarri/SOLID_PRINCIPLES/assets/55095546/db516662-2cf5-4024-a369-bb1cc9c822f6)
 
 _As entidades do software (classes), devem estar abertas para extensão, e fechadas para modificação/alteração._
 
