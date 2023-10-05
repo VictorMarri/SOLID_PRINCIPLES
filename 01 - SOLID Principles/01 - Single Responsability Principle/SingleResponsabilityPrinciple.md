@@ -1,6 +1,6 @@
 # Single Responsability Principle
 
-[x] Imagem SRP aqui
+![S](https://github.com/VictorMarri/SOLID_PRINCIPLES/assets/55095546/a91a0c13-daa0-4195-83cf-c5ac8ff81d43)
 
 > _Cada classe deve ter apenas uma responsabilidade a ser cumprida_
 
