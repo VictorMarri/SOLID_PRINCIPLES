@@ -8,7 +8,7 @@
 
 Se uma classe A é uma classe base de uma classe B, então, **qualquer instância de A pode ser substituída por uma instância de B sem causar erros ou resultados incorretos.** As subclasses devem respeitar o contrato definido pelas superclasses e não devem adicionar pré-condições mais fortes ou pós-condições mais fracas.
 
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/0c059f4b-785a-4d50-b312-635aa2bf0681/Untitled.png)
+![TS](https://github.com/VictorMarri/SOLID_PRINCIPLES/assets/55095546/ed6aa020-080f-42ef-b326-c5dc82515359)
 
 O princípio de Liskov basicamente determina que **objetos de uma SUPERCLASSE podem ser SUBSTITUÍDOS com objetos de suas SUBCLASSES, de forma a NÃO QUEBRAR A APLICAÇÃO.** Com isso, os objetos das suas SUBCLASSES devem se comportar da MESMA FORMA que os objetos da superclasse.
 
