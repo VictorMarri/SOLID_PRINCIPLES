@@ -81,7 +81,15 @@ Essa classe **'Pedido' não está fechada para modificações, e não está aber
 4. Esse erro afetaria toda a classe Pedido, e não somente a parte do código incluída.
 5. Teríamos que testar a classe Pedido novamente para todos os tipos de clientes
 
-[x] colocar aqui imagens do OCP
+**************************Esse código viola o principio da responsabilidade única pq temos mais de um eixo de mudança (mais de um if realizando operações distintas no mesmo módulo, sem abstração).**************************
+
+Para isso, vamos pegar, visualmente, o diagrama que está assim:
+
+![IMG1](https://github.com/VictorMarri/SOLID_PRINCIPLES/assets/55095546/45d6f4e2-5354-45c2-949d-69df0cc6d84b)
+
+E vamos melhorar ele, adequando ao principio aberto e fechado, dessa forma aqui:
+
+![IMG2](https://github.com/VictorMarri/SOLID_PRINCIPLES/assets/55095546/93dd0929-9501-494a-aa32-9c6c620d4eb6)
 
 ### Estendendo utilizando herança:
 
