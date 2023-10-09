@@ -26,7 +26,7 @@ A segregação por interfaces vem pra mitigar esse problema. O Principio da segr
 
 Vamos ver esse caso de exemplo:
 
-```c-sharp
+```csharp
 public interface ITelefone
 {
 	void Tocar();
@@ -36,7 +36,7 @@ public interface ITelefone
 ```
 
 
-```c-sharp
+```csharp
 public class TelefoneCelular : ITelefone
 {
 	public void Tocar()
@@ -57,7 +57,7 @@ public class TelefoneCelular : ITelefone
 ```
 
 
-```c-sharp
+```csharp
 public class TelefoneResidencial: ITelefone
 {
 	public void Tocar()
@@ -87,7 +87,7 @@ Com isso, percebemos que criamos uma interface tão generica *******************
 Pra resolvermos isso, nos basicamente vamos precisar de criar interfaces especificas pra cada classe.
 
 
-```c-sharp
+```csharp
 public interface ITelefone
 {
 	public void Tocar();
@@ -95,7 +95,7 @@ public interface ITelefone
 }
 ```
 
-```c-sharp
+```csharp
 public interface ITelefoneCelular : ITelefone
 {
 	public void TirarFoto();
@@ -105,7 +105,7 @@ public interface ITelefoneCelular : ITelefone
 
 OU
 
-```c-sharp
+```csharp
 public interface ITelefoneCelular
 {
 	public void Tocar();
@@ -115,7 +115,7 @@ public interface ITelefoneCelular
 }
 ```
 
-```c-sharp
+```csharp
 public class TelefoneCelular : ITelefoneCelular
 {
 	public void Tocar();
@@ -125,7 +125,7 @@ public class TelefoneCelular : ITelefoneCelular
 }
 ```
 
-```c-sharp
+```csharp
 public class Telefone : ITelefone
 {
 	public void Tocar();
