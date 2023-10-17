@@ -182,3 +182,9 @@ public class DescontoClienteVip : Pedido
   }
 }
 ```
+
+### Fontes de estudo
+- https://code-maze.com/open-closed-principle/#:~:text=The%20Open%20Closed%20Principle%20(OCP,extension%20but%20closed%20for%20modification.
+- https://dotnettutorials.net/lesson/open-closed-principle/
+- https://www.eduardopires.net.br/2013/05/open-closed-principle-ocp/
+- https://www.udemy.com/course/c-aplicando-principios-solid-na-pratica/learn/lecture/19483878#overview
