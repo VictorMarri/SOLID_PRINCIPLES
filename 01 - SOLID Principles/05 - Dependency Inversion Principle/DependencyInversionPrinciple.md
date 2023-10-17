@@ -110,3 +110,10 @@ Injeto na classe que precisa da dependencia para termos acesso aos recursos:
 Injeção de Dependencia / Inversão de Dependencia / Inversão de controle
 
 ![Imagem10](https://github.com/VictorMarri/SOLID_PRINCIPLES/assets/55095546/c700d49c-205c-4f9c-a0d7-2ff547a248b5)
+
+### Fontes de estudo
+
+- https://stackify.com/dependency-inversion-principle/
+- https://medium.com/@tbaragao/solid-d-i-p-dependency-inversion-principle-e87527f8d0be
+- https://deviq.com/principles/dependency-inversion-principle
+- https://dev.to/tamerlang/understanding-solid-principles-dependency-inversion-1b0f
