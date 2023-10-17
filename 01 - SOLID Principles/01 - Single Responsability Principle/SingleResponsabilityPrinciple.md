@@ -64,3 +64,9 @@ public class EmailService
 Agora, a classe Pedido tem apenas a responsabilidade de criar pedidos, enquanto a classe EmailService cuida exclusivamente do envio de e-mails de confirmação. Cada classe tem uma única razão para mudar, tornando o código mais modular e fácil de manter.
 
 Em resumo, o SRP incentiva a divisão de responsabilidades em classes separadas, tornando o código mais coeso, facilitando a manutenção e reduzindo o risco de introduzir erros quando as funcionalidades precisam ser alteradas.
+
+### Fontes de estudo
+
+- https://carloszan.medium.com/entendendo-solid-com-exemplos-em-c-98a983d47f
+- https://medium.com/beelabacademy/princ%C3%ADpios-de-s-o-l-i-d-em-c-guia-pr%C3%A1tico-cbb1e6584284#:~:text=O%20SOLID%20%C3%A9%20um%20acr%C3%B4nimo,poderiam%20se%20encaixar%20nesta%20palavra.
+- https://blog.cleancoder.com/uncle-bob/2014/05/08/SingleReponsibilityPrinciple.html
