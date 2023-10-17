@@ -101,3 +101,12 @@ class Rectangle : Shape
 ````
 
 Como podemos ver, nesse exemplo, a subclasse ‘Rectangle’ tá adicionando uma pré-condiçõa ao metodo Draw() da superclasse ‘Shape’. A pré condição vai verificar se as dimensões do retagulo são positivas. Essa pré-condição não é mais forte do que a pré-condição definida na superclasse. 
+
+### Fontes de Estudo
+
+- https://www.macoratti.net/20/07/c_lsp1.htm
+- https://blog.knoldus.com/what-is-liskov-substitution-principle-lsp-with-real-world-examples/#:~:text=Simply%20put%2C%20the%20Liskov%20Substitution,the%20objects%20of%20our%20superclass.
+- https://medium.com/@alexandre.malavasi/liskov-substitution-principle-in-c-1f4bdff2b92f
+- https://code-maze.com/liskov-substitution-principle/
+- https://www.c-sharpcorner.com/article/solid-principles-in-c-sharp-liskov-substitution-principle/
+- https://www.tutorialsteacher.com/csharp/liskov-substitution-principle
