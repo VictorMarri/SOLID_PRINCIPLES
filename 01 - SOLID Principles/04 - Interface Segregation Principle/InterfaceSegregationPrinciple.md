@@ -134,3 +134,11 @@ public class Telefone : ITelefone
 ```
 
 Dessa forma, geramos facilidade de manutenção, pois temos especificidades nas classes clientes (que chamam as interfaces). Quebramos o acoplamento entre as classes que a implementação de interfaces gordas traz e ainda ganhamos coesao e eficiencia no codigo. 
+
+### Fontes de estudo
+
+- https://www.youtube.com/watch?v=QeuojKDdQNI&ab_channel=Andr%C3%A9Secco
+- https://www.youtube.com/watch?v=xahwVmf8itI&ab_channel=ChristopherOkhravi
+- https://www.bytehide.com/blog/interface-segregation-principle-in-csharp-solid-principles
+- https://medium.com/netcoders/aplicando-solid-com-c-isp-interface-segregation-principle-e6683f1d6975
+- https://medium.com/backticks-tildes/the-s-o-l-i-d-principles-in-pictures-b34ce2f1e898
